@@ -2,7 +2,8 @@ import React from 'react';
 import './styles.css';
 import Input from '../../components/Input';
 import LoginImg from '../../assets/login.svg';
-import LogoNomeImg from '../../assets/logo-nome.svg'
+import LogoNomeImg from '../../assets/logo-nome.svg';
+import {Link} from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = React.useState ("");
@@ -18,6 +19,7 @@ function Login() {
                     <Input type="text" name="email" label="E-mail:" value={email} setValue={setEmail}/>
                     <Input type="password" name="password" label="Senha:" value={password} setValue={setPassword}/>
                     <button className="btn">Entrar</button>
+                    <Link to="/criar">Criar uma conta</Link>
                 </form>
             </div>
         </div>
