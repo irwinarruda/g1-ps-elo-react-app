@@ -1,13 +1,25 @@
 import React from 'react';
 import './styles.css';
 import Input from '../../components/Input';
+import LoginImg from '../../assets/login.svg';
+import LogoNomeImg from '../../assets/logo-nome.svg'
 
 function Login() {
-    const [username, setUsername] = React.useState ("")
+    const [email, setEmail] = React.useState ("");
+    const [password, setPassword] = React.useState ("");
     return (
-        <div>
-            <Input type="text" name="usuario" label="Nome:" value={username} setValue={setUsername}/>
-            {username}
+        <div className="login-container">
+            <div>
+                <img src={LoginImg} />
+            </div>
+            <div className="login-cadastro">
+                <img src={LogoNomeImg}/>
+                <form>
+                    <Input type="text" name="email" label="E-mail:" value={email} setValue={setEmail}/>
+                    <Input type="password" name="password" label="Senha:" value={password} setValue={setPassword}/>
+                    <button className="btn">Entrar</button>
+                </form>
+            </div>
         </div>
     );
 }
