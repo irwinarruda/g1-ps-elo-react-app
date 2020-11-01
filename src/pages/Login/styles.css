@@ -14,3 +14,19 @@
     display: block;
     margin: 0 auto;
 }
+
+.login-cadastro button {
+    margin: 20px auto 0px auto;
+}
+
+.login-cadastro form a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 10px #E55A45;
+    margin: 20px auto 0px auto;
+    display: flex;
+}
+.login-cadastro form {
+    width: 100%;
+}
