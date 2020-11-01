@@ -1,0 +1,22 @@
+.input-label {
+    display: block;
+    font-size: 24px;
+    color: white;
+    text-shadow: 0px 0px 10px #E55A45;
+    font-weight: bold;
+}
+
+.input-input {
+    display: block;
+    background-color: #FF5040;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.input.error {
+    background-color: #FF0066;
+}

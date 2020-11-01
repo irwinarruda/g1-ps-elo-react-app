@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 
 function Input({label, type, name, value, setValue, error}) {
     function handleChange (event) {
@@ -6,8 +7,9 @@ function Input({label, type, name, value, setValue, error}) {
     }
     return (
         <div>
-           <label>{label}</label> 
-           <input type={type} name={name} id={name} value={value} onChange={handleChange}/>
+           <label className="input-label">{label}</label> 
+           <input className="input-input" type={type} name={name} id={name} value={value} onChange={handleChange}/>
+        {error? <p className="input-error">{error}</p>: null}
         </div>
     );
 }
