@@ -10,7 +10,7 @@ function Login() {
     const [password, setPassword] = React.useState ("");
     return (
         <div className="login-container">
-            <div>
+            <div className="logo-ilustracao">
                 <img src={LoginImg} />
             </div>
             <div className="login-cadastro">
@@ -19,8 +19,8 @@ function Login() {
                     <Input type="text" name="email" label="E-mail:" value={email} setValue={setEmail}/>
                     <Input type="password" name="password" label="Senha:" value={password} setValue={setPassword}/>
                     <button className="btn">Entrar</button>
-                    <Link to="/criar">Criar uma conta</Link>
                 </form>
+                <Link to="/criar">Criar uma conta</Link>
             </div>
         </div>
     );

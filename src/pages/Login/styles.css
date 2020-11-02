@@ -2,12 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 6% auto 0px auto;
+    width: 1100px;
+    padding: 0px;
 }
 
 .login-cadastro {
-    width: 400px;
-    margin: 20px 0px 0px 60px;
-
+    width: 25rem;
+    margin: 0px 0px 0px 60px;
 }
 
 .login-cadastro img {
@@ -19,14 +21,36 @@
     margin: 20px auto 0px auto;
 }
 
-.login-cadastro form a {
+.login-cadastro a {
+    display: block;
+    width: 128px;
     font-size: 18px;
     text-decoration: none;
     color: white;
     text-shadow: 0px 0px 10px #E55A45;
     margin: 20px auto 0px auto;
-    display: flex;
 }
-.login-cadastro form {
+
+.logo-ilustracao {
+    padding: 0px;
+    max-width: 700px;
+}
+
+.logo-ilustracao img {
+    display: block;
     width: 100%;
+}
+
+@media(max-width: 1100px) {
+    .login-container {
+        width: 350px;
+        flex-direction: column;
+    }
+    .logo-ilustracao img {
+        display: none;
+    }
+    .login-cadastro {
+        width: 100%;
+        margin: 0px;
+    }
 }
