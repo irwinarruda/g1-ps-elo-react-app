@@ -144,6 +144,20 @@ table {
 
 /*CSS RESET*/
 
+@keyframes waitState {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.waitCircle {
+    animation-name: waitState;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
 
 html {
     height: 100%;
@@ -167,7 +181,18 @@ html {
     cursor: pointer;
 }
 
+.btn[disabled] {
+    background-color: #B23024;
+    cursor: wait;
+}
+
 .cordefundo {
     background-image: linear-gradient(135deg, #9833ff 0%, #5500cc 75%);
     height: 100vh;
+}
+
+@media(max-height: 780px) {
+    .cordefundo {
+        height: 100%;
+    }
 }
