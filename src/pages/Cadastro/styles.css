@@ -1,0 +1,56 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto 0px auto;
+    width: 1100px;
+    padding-top: 6%;
+}
+
+.login-cadastro {
+    width: 25rem;
+    margin: 0px 0px 0px 60px;
+}
+
+.login-cadastro img {
+    display: block;
+    margin: 0 auto;
+}
+
+.login-cadastro button {
+    margin: 20px auto 0px auto;
+}
+
+.login-cadastro a {
+    display: block;
+    width: 128px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 10px #E55A45;
+    margin: 20px auto 0px auto;
+}
+
+.logo-ilustracao {
+    padding: 0px;
+    max-width: 700px;
+}
+
+.logo-ilustracao img {
+    display: block;
+    width: 100%;
+}
+
+@media(max-width: 1100px) {
+    .login-container {
+        width: 350px;
+        flex-direction: column;
+    }
+    .logo-ilustracao img {
+        display: none;
+    }
+    .login-cadastro {
+        width: 100%;
+        margin: 0px;
+    }
+}
