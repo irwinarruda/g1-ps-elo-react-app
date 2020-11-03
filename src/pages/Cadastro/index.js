@@ -9,23 +9,23 @@ function Cadastro() {
     const [nome, setNome] = React.useState ("");
     const [email, setEmail] = React.useState ("");
     const [password, setPassword] = React.useState ("");
-    const [confPassword, setConfPassword] = React.useState()
+    const [confPassword, setConfPassword] = React.useState("");
     return (
         <div className="cordefundo">
-            <div className="login-container">
+            <div className="cadastro-container">
                 <div className="logo-ilustracao">
                     <img src={CadastroImg} />
                 </div>
-                <div className="login-cadastro">
+                <div className="dados-cadastro">
                     <img src={LogoImg}/>
                     <form>
                         <Input type="text" name="nome" label="Nome:" value={nome} setValue={setNome}/>
-                        <Input type="text" name="email" label="E-mail:" value={email} setValue={setEmail}/>
+                        <Input type="email" name="email" label="E-mail:" value={email} setValue={setEmail}/>
                         <Input type="password" name="password" label="Senha:" value={password} setValue={setPassword}/>
                         <Input type="password" name="confPassword" label="Confirme sua senha:" value={confPassword} setValue={setConfPassword}/>
                         <button className="btn">Criar conta</button>
                     </form>
-                    <Link to="/login">Já tem uma conta?</Link>
+                    <Link to="/login">Já tem uma conta? Entre aqui</Link>
                 </div>
             </div>
         </div>
