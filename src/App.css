@@ -144,9 +144,6 @@ table {
 
 /*CSS RESET*/
 
-body {
-    background-image: linear-gradient(135deg, #9833ff 0%, #5500cc 75%);
-}
 
 html {
     height: 100%;
@@ -168,4 +165,9 @@ html {
 .btn:hover {
     background-color: #E53D2E;
     cursor: pointer;
+}
+
+.cordefundo {
+    background-image: linear-gradient(135deg, #9833ff 0%, #5500cc 75%);
+    height: 100vh;
 }
