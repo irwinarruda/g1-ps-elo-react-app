@@ -22,3 +22,28 @@
 .input.error {
     background-color: #FF0066;
 }
+
+.foto-de-perfil {
+    display: flex;
+    align-items: center;
+}
+.foto-de-perfil label {
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    background-color: #FF5040;
+    display: inline-block;
+    padding: 2px 30px;
+    border-radius: 10px;
+    transition: background .2s;
+}
+
+.foto-de-perfil label:hover {
+    background-color: #E53D2E;
+}
+
+.foto-de-perfil input {
+    display: none;
+}
