@@ -23,7 +23,7 @@
 
 .cadastro-dado a {
     display: block;
-    width: 160px;
+    width: 180px;
     font-size: 18px;
     text-decoration: none;
     color: white;
@@ -32,7 +32,11 @@
     text-align: center;
 }
 
-.cadastro-ilustracao {
+.cadastro-dado a svg {
+    margin-right: 8px;
+}
+
+.cadastro-ilustracao { 
     padding: 0px;
     max-width: 700px;
 }

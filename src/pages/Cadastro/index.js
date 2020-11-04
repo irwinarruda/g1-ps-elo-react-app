@@ -1,11 +1,13 @@
 import React from 'react';
 import Input from '../../components/Input';
 import './styles.css';
+
 import LogoImg from '../../assets/logo.svg';
 import CadastroImg from '../../assets/cadastro.svg';
 import WaitImg from '../../assets/wait.svg';
 import {Link, Redirect} from 'react-router-dom';
 import {USER_CREATE, USER_IS_LOGED} from '../../UserApi';
+
 
 function Cadastro() {
     const [nome, setNome] = React.useState ("");
