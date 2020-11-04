@@ -7,15 +7,76 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: 166px;
-    margin-left: 266px;
+    font-size: 22px;
+    color: #fff;
+    margin-right: 90px;
 }
 .fundo{
     height: 100vh;
     background: #fff;
 }
 
-/* label {
+.minha-conta-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto 0px auto;
+    width: 100%;
+    padding-top: 6%;
+}
+.minha-conta-input input{
+    background-color: #FF5040;
+    border: none;
+    width: 439px;
+    height: 43px;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+}
+.minha-conta-input label{
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 95px;
+}
+.minha-conta-input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.btn-minha-conta{
+    height: 50px;
+    width: 211px;
+    font-size: 24px;
+    color: white;
+    background-color: #FF5040;
+    display: block;
+    border: none;
+    border-radius: 15px;
+    margin-top: 20px;
+    transition: background 0.2s;
+    margin-top: 70px;
+}
+.btn-minha-conta:hover {
+    background-color: #E53D2E;
+    cursor: pointer;
+}
+
+.foto-de-perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foto-de-perfil p{
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 17px;
+}
+
+.foto-de-perfil label {
     cursor: pointer;
     display: block;
     font-size: 14px;
@@ -23,15 +84,15 @@
     font-weight: bold;
     background-color: #FF5040;
     display: inline-block;
-    padding: 2px 30px;
+    padding: 5px 40px;
     border-radius: 10px;
     transition: background .2s;
 }
 
-label:hover {
+.foto-de-perfil label:hover {
     background-color: #E53D2E;
 }
 
-input tipo file do label {
+.foto-de-perfil input {
     display: none;
-} */
+}
