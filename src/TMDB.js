@@ -12,6 +12,9 @@ export const SEARCH_MOVIE = (movie) => {
 
 export const FIND_MOVIE = (id) => {
     return {
-        url: `${URL_BASE}/movie/${id}?api_key=${API_KEY}&language=pt-BR`
+        url: `${URL_BASE}/movie/${id}?api_key=${API_KEY}&language=pt-BR`,
+        options: {
+            method: 'GET'
+        }
     }
 }

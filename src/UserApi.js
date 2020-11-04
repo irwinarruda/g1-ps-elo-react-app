@@ -1,11 +1,36 @@
 export const USER_API_URL = 'http://localhost:3005/api'
 
-export const USER_CREATE = (fromData) => {
+
+export const USER_IS_LOGED = async () => {
+    try {
+        const token = window.localStorage.getItem("token");
+        if(token) {
+            const response = await fetch(USER_API_URL + "/user/isloged", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token
+                },
+            });
+            const json = response.json();
+            return json;
+        } else {
+            throw new Error("NENHUM TOKEN ENCONTRADO");
+        }
+    }catch(err) {
+        console.error(err);
+    }
+}
+
+export const USER_CREATE = (body) => {
     return {
         url: USER_API_URL + '/user/register',
         options: {
             method: 'POST',
-            body: fromData
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
         }
     }
 } 
