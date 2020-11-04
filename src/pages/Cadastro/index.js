@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from '../../components/Input';
 import './styles.css';
-
+import {FiArrowLeft} from 'react-icons/fi';
 import LogoImg from '../../assets/logo.svg';
 import CadastroImg from '../../assets/cadastro.svg';
 import WaitImg from '../../assets/wait.svg';
@@ -89,7 +89,9 @@ function Cadastro() {
                         <Input type="password" name="confPassword" label="Confirme sua senha:" value={confPassword} setValue={setConfPassword}/>
                         <button className="btn">Criar conta</button>
                     </form>
-                    <Link to="/login">Já tem uma conta? Entre aqui</Link>
+                    <Link to="/login">
+                        <FiArrowLeft size={16} color="#FF5040"/>
+                        Já tem uma conta? Entre aqui</Link>
                     {wait?<img className="waitCircle" src={WaitImg} alt="Carregamento" />:null}
                     {renderRedirect()}
                 </div>
