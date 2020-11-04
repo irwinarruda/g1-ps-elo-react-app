@@ -7,21 +7,21 @@
     padding-top: 6%;
 }
 
-.dados-cadastro {
+.cadastro-dado {
     width: 25rem;
     margin: 0px 0px 0px 60px;
 }
 
-.dados-cadastro img {
+.cadastro-dado img {
     display: block;
     margin: 0 auto;
 }
 
-.dados-cadastro button {
+.cadastro-dado button {
     margin: 20px auto 0px auto;
 }
 
-.dados-cadastro a {
+.cadastro-dado a {
     display: block;
     width: 180px;
     font-size: 18px;
@@ -32,16 +32,16 @@
     text-align: center;
 }
 
-.dados-cadastro a svg {
+.cadastro-dado a svg {
     margin-right: 8px;
 }
 
-.logo-ilustracao {
+.cadastro-ilustracao { 
     padding: 0px;
     max-width: 700px;
 }
 
-.logo-ilustracao img {
+.cadastro-ilustracao img {
     display: block;
     width: 100%;
 }
@@ -51,10 +51,10 @@
         width: 350px;
         flex-direction: column;
     }
-    .logo-ilustracao img {
+    .cadastro-ilustracao img {
         display: none;
     }
-    .dados-cadastro {
+    .cadastro-dado {
         width: 100%;
         margin: 0px;
     }
