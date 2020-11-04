@@ -1,4 +1,4 @@
-.img-label{
+.img-label {
     height: 477px;
     width: 477px;
     background: linear-gradient(135deg, #9833ff 0%, #5500cc 75%);
@@ -11,12 +11,13 @@
     color: #fff;
     margin-right: 90px;
 }
-.fundo{
+
+.fundo {
     height: 100vh;
     background: #fff;
 }
 
-.minha-conta-container{
+.minha-conta-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +25,8 @@
     width: 100%;
     padding-top: 6%;
 }
-.minha-conta-input input{
+
+.minha-conta-input input {
     background-color: #FF5040;
     border: none;
     width: 439px;
@@ -34,19 +36,22 @@
     font-size: 24px;
     padding: 10px 20px;
 }
-.minha-conta-input label{
+
+.minha-conta-input label {
     font-size: 24px;
     font-weight: bold;
     margin-right: 95px;
+    color: #271640;
 }
-.minha-conta-input{
+
+.minha-conta-input {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 35px;
 }
 
-.btn-minha-conta{
+.btn-minha-conta {
     height: 50px;
     width: 211px;
     font-size: 24px;
@@ -59,6 +64,7 @@
     transition: background 0.2s;
     margin-top: 70px;
 }
+
 .btn-minha-conta:hover {
     background-color: #E53D2E;
     cursor: pointer;
@@ -70,10 +76,11 @@
     align-items: center;
 }
 
-.foto-de-perfil p{
+.foto-de-perfil p {
     font-size: 24px;
     font-weight: bold;
     margin-right: 17px;
+    color: #271640
 }
 
 .foto-de-perfil label {
@@ -95,4 +102,16 @@
 
 .foto-de-perfil input {
     display: none;
+}
+
+.minha-conta-img-container {
+    max-width: 400px;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 15px;
+}
+
+.minha-conta-img-container {
+    margin: auto;
 }

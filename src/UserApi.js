@@ -1,5 +1,9 @@
-export const USER_API_URL = 'http://localhost:3005'
+export const USER_API_URL = "http://localhost:3005/api";
 
+export function userLogout() {
+    window.localStorage.removeItem("token");
+    //setData(null);
+};
 
 export const USER_IS_LOGED = async () => {
     try {

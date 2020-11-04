@@ -48,6 +48,8 @@ function Login() {
                 email: email,
                 password: password
             };
+            console.log(email);
+            console.log(password);
             const {url, options} = USER_LOGIN(userInfo);
             const response = await fetch(url, options);
             const json = await response.json();
@@ -67,7 +69,7 @@ function Login() {
         }
     }
 
-    return (
+    return ( 
         <div className="cordefundo">
             <div className="login-container">
                 <div className="logo-ilustracao">

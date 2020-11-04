@@ -11,7 +11,7 @@ function HomePage(){
   const [data, setData] = React.useState();
 
   React.useEffect(() => {
-    /* async function findToken() {
+    async function findToken() {
         const token = window.localStorage.getItem("token");
         if(token) {
             const response = await USER_IS_LOGED(token);
@@ -28,7 +28,7 @@ function HomePage(){
           setRedirect(true);
         }
     };    
-    findToken();  */ 
+    findToken();  
   }, []);
 
   React.useEffect(() => {
