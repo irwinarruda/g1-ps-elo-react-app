@@ -5,7 +5,7 @@ import LoginImg from '../../assets/login.svg';
 import LogoNomeImg from '../../assets/logo-nome.svg';
 import WaitImg from '../../assets/wait.svg'
 import {Link, Redirect} from 'react-router-dom';
-import {USER_LOGIN, USER_IS_LOGED} from '../../UserApi';
+import {USER_LOGIN} from '../../UserApi';
 import {FiLogIn} from 'react-icons/fi';
 
 
@@ -17,18 +17,10 @@ function Login() {
     const [data, setData] = React.useState();
 
     React.useEffect(() => {
-        async function findToken() {
+        function findToken() {
             const token = window.localStorage.getItem("token");
             if(token) {
-                const response = await USER_IS_LOGED(token);
-                //var dadinhos = response;
-                const body =[ 
-                    response.username,
-                    response.email,
-                    response.urlImg,
-                    response.movieDB
-                ];
-                setData(body);
+                setData(token);
                 setRedirect(true);
             }
         };    

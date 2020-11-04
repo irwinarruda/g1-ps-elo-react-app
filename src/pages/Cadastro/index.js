@@ -6,7 +6,7 @@ import LogoImg from '../../assets/logo.svg';
 import CadastroImg from '../../assets/cadastro.svg';
 import WaitImg from '../../assets/wait.svg';
 import {Link, Redirect} from 'react-router-dom';
-import {USER_CREATE, USER_IS_LOGED} from '../../UserApi';
+import {USER_CREATE} from '../../UserApi';
 
 
 function Cadastro() {
@@ -19,18 +19,10 @@ function Cadastro() {
     const [data, setData] = React.useState();
 
     React.useEffect(() => {
-        async function findToken() {
+        function findToken() {
             const token = window.localStorage.getItem("token");
             if(token) {
-                const response = await USER_IS_LOGED(token);
-                //var dadinhos = response;
-                const body =[ 
-                    response.username,
-                    response.email,
-                    response.urlImg,
-                    response.movieDB
-                ];
-                setData(body);
+                setData(token);
                 setRedirect(true);
             }
         };    
