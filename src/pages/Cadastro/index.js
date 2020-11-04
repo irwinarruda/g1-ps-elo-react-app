@@ -4,6 +4,7 @@ import './styles.css';
 import LogoImg from '../../assets/logo.svg'
 import CadastroImg from '../../assets/cadastro.svg'
 import {Link} from 'react-router-dom';
+import {FiArrowLeft} from 'react-icons/fi';
 
 function Cadastro() {
     const [nome, setNome] = React.useState ("");
@@ -14,10 +15,10 @@ function Cadastro() {
         <div className="cordefundo">
             <div className="cadastro-container">
                 <div className="logo-ilustracao">
-                    <img src={CadastroImg} />
+                    <img src={CadastroImg} alt="Cadastro" />
                 </div>
                 <div className="dados-cadastro">
-                    <img src={LogoImg}/>
+                    <img src={LogoImg} alt="Logo Count and Flix"/>
                     <form>
                         <Input type="text" name="nome" label="Nome:" value={nome} setValue={setNome}/>
                         <Input type="email" name="email" label="E-mail:" value={email} setValue={setEmail}/>
@@ -25,7 +26,9 @@ function Cadastro() {
                         <Input type="password" name="confPassword" label="Confirme sua senha:" value={confPassword} setValue={setConfPassword}/>
                         <button className="btn">Criar conta</button>
                     </form>
-                    <Link to="/login">Já tem uma conta? Entre aqui</Link>
+                    <Link to="/login">
+                        <FiArrowLeft size={16} color="#FF5040" />
+                        Já tem uma conta? Entre aqui</Link>
                 </div>
             </div>
         </div>

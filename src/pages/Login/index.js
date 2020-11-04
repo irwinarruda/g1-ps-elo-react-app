@@ -4,9 +4,10 @@ import {Redirect} from 'react-router-dom';
 import Input from '../../components/Input';
 import LoginImg from '../../assets/login.svg';
 import LogoNomeImg from '../../assets/logo-nome.svg';
-import WaitImg from '../../assets/wait.svg'
+import WaitImg from '../../assets/wait.svg';
 import {Link} from 'react-router-dom';
 import {USER_LOGIN} from '../../UserApi';
+import {FiLogIn} from 'react-icons/fi';
 
 function Login() {
     const [email, setEmail] = React.useState ("");
@@ -51,7 +52,9 @@ function Login() {
                         <Input type="password" name="password" label="Senha:" value={password} setValue={setPassword}/>
                         {!wait? <button type="submit" className="btn">Entrar</button>: <button type="submit" className="btn" disabled="disabled">Entrar</button>}
                     </form>
-                    <Link to="/cadastro">Criar uma conta</Link>
+                    <Link to="/cadastro">
+                        <FiLogIn size={16} color="#FF5040" />
+                        Criar uma conta</Link>
                     {wait?<img className="waitCircle" src={WaitImg} alt="Carregamento" />:null}
                     {renderRedirect()}
                 </div>
