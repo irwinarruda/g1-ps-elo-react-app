@@ -15,6 +15,7 @@
 .login-cadastro img {
     display: block;
     margin: 0 auto;
+    max-width: 350px;
 }
 
 .login-cadastro button {
@@ -23,12 +24,16 @@
 
 .login-cadastro a {
     display: block;
-    width: 128px;
+    width: 160px;
     font-size: 18px;
     text-decoration: none;
     color: white;
     text-shadow: 0px 0px 10px #E55A45;
     margin: 20px auto 0px auto;
+}
+
+.login-cadastro a svg {
+    margin-right: 8px;
 }
 
 .logo-ilustracao {
