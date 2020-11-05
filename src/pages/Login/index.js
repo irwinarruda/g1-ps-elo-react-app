@@ -19,7 +19,7 @@ function Login() {
     React.useEffect(() => {
         function findToken() {
             const token = window.localStorage.getItem("token");
-            if(token) {
+            if(token && token !== "undefined") {
                 setData(token);
                 setRedirect(true);
             }
@@ -30,7 +30,6 @@ function Login() {
     React.useEffect(() => {
         if(data) {
             setRedirect(true);
-            console.log(data);
         } 
     }, [data]);
 

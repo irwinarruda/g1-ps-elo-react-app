@@ -17,7 +17,7 @@ function HomePage(){
   React.useEffect(() => {
     async function findToken() {
         const token = window.localStorage.getItem("token");
-        if(token) {
+        if(token && token !== "undefined") {
             const response = await USER_IS_LOGED(token);
             const body =[ 
                 response.username,
@@ -31,10 +31,6 @@ function HomePage(){
     };    
     findToken();  
   }, []);
-
-  React.useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   function renderRedirect(){
       if(redirect) {
