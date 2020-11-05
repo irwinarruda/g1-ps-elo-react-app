@@ -17,10 +17,10 @@ const ItemId = ({array}) => {
     function handleClick2() {
         let decremento = Math.round(window.innerWidth / 3);
         let tamanhoLista = array.length * 150 + array.length * 30;
-        console.log(array.length);
         if (window.innerWidth - tamanhoLista > scrollX - decremento) {
+            if(tamanhoLista >= window.innerWidth) {
                 setScrollX(window.innerWidth - tamanhoLista - 30); 
-                
+            }   
         } else {
             setScrollX(scrollX - decremento);
         }

@@ -5,10 +5,9 @@ export function userLogout() {
     //setData(null);
 };
 
-export const USER_IS_LOGED = async () => {
+export const USER_IS_LOGED = async (token) => {
     try {
-        const token = window.localStorage.getItem("token");
-        if(token) {
+        if(token && token !== "undefined") {
             const response = await fetch(USER_API_URL + "/user/isloged", {
                 method: 'POST',
                 headers: {

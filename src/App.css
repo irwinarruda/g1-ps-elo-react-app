@@ -157,7 +157,7 @@ table {
     animation-name: waitState;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-    width: 100px;
+    width: 50px;
 }
 
 
