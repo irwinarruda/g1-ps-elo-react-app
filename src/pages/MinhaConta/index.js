@@ -16,7 +16,6 @@ function MinhaConta(){
         const token = window.localStorage.getItem("token");
         if(token) {
             const response = await USER_IS_LOGED(token);
-            //var dadinhos = response;
             const body =[ 
                 response.username,
                 response.email,
@@ -26,7 +25,6 @@ function MinhaConta(){
             setImgData(response.urlImg);
             setData(body);
         } else {
-          //userLogout();
           setRedirect(true);
         }
     };    

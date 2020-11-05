@@ -2,29 +2,30 @@ import React from 'react';
 import Header from '../../components/Header/index';
 import './styles.css';
 import {Redirect} from 'react-router-dom';
-//import {Link} from 'react-router-dom';
-import { USER_IS_LOGED} from '../../UserApi';
+import {SEARCH_MOVIE} from '../../TMDB';
+import { USER_IS_LOGED, USER_UPDATEDB } from '../../UserApi';
+import ItemId from './ItemId';
+import Input from '../../components/Input';
+import Wait from '../../assets/wait.svg';
 
 function HomePage(){
-
+  const [film, setFilm] = React.useState("");
   const [redirect, setRedirect] = React.useState(false);
   const [data, setData] = React.useState();
+  const [wait, setWait] = React.useState(false);
 
   React.useEffect(() => {
     async function findToken() {
         const token = window.localStorage.getItem("token");
         if(token) {
             const response = await USER_IS_LOGED(token);
-            //var dadinhos = response;
             const body =[ 
                 response.username,
                 response.email,
-                response.urlImg,
-                response.movieDB
+                response.movieDB,
             ];
             setData(body);
         } else {
-          userLogout();
           setRedirect(true);
         }
     };    
@@ -34,23 +35,58 @@ function HomePage(){
   React.useEffect(() => {
     console.log(data);
   }, [data]);
-  
-  function userLogout() {
-    window.localStorage.removeItem("token");
-    setData(null);
-  }
 
   function renderRedirect(){
       if(redirect) {
           return <Redirect to='/login'/>
       }
   }
-    return(
-        <div className="fundo">
-          <Header />
-          {renderRedirect()}
-        </div>        
-    )
+
+  async function handleSubmit(event) {
+    try{
+      event.preventDefault();
+      setWait(true);
+      if(film === "") throw new Error("Nenhum dado Colocado");
+      const {urlD, optionsD} = SEARCH_MOVIE(film);
+      const responseDB = await fetch(urlD, optionsD);
+      const jsonDB = await responseDB.json();
+      const userInfo = {
+          movieDB: (jsonDB.results[0].id).toString()
+      };
+      const token = window.localStorage.getItem("token");
+      const {url, options} = USER_UPDATEDB(userInfo, token);
+      const response = await fetch(url, options);
+      const json = await response.json();
+      const bodyLogin = [
+          json.username,
+          json.email,
+          json.movieDB,
+      ];
+      console.log(bodyLogin);
+      setData(bodyLogin);
+    } catch(err) {
+        console.error("Erro: " + err);
+    } finally {
+      setFilm("");
+      setWait(false)
+    }
+  }
+  
+  return(
+      <div className="fundo">
+        <Header />
+        {data? <ItemId array={data[2]} /> : null}
+        <div className="home-search-container">
+          <h1>Adicionar Filme</h1>
+          <form className="home-form-container" onSubmit={handleSubmit}>
+            <Input type="text" name="film" value={film} setValue={setFilm} label="Nome: "/>
+            <button className="btn" type="submit">Salvar</button>
+          </form>
+          {wait? <img src={Wait} alt="imagem de espera"/>:null}
+        </div>
+        {renderRedirect()}
+      </div>        
+  )
 }
 
 export default HomePage;

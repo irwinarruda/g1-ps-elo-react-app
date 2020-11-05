@@ -3,8 +3,8 @@ const URL_BASE = "https://api.themoviedb.org/3";
 
 export const SEARCH_MOVIE = (movie) => {
     return {
-        url: `${URL_BASE}/search/movie?api_key=${API_KEY}&language=pt-BR&query=${movie}&page=1`,
-        options: {
+        urlD: `${URL_BASE}/search/movie?api_key=${API_KEY}&language=pt-BR&query=${movie}&page=1`,
+        optionsD: {
             method: 'GET'
         }
     }
@@ -12,8 +12,8 @@ export const SEARCH_MOVIE = (movie) => {
 
 export const FIND_MOVIE = (id) => {
     return {
-        url: `${URL_BASE}/movie/${id}?api_key=${API_KEY}&language=pt-BR`,
-        options: {
+        urlD: `${URL_BASE}/movie/${id}?api_key=${API_KEY}&language=pt-BR`,
+        optionsD: {
             method: 'GET'
         }
     }

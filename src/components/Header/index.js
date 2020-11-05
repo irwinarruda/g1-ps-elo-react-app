@@ -5,7 +5,6 @@ import { MenuItems } from "./MenuItems";
 import LogoHeader from '../../assets/logoheader.svg';
 import { Link } from "react-router-dom";
 import {userLogout} from '../../UserApi';
-//const Header = () => <header id="main-Header">Count and Flix</header>;
 class Header extends Component {
     state ={ clicked: false }
     handleClick = () => {

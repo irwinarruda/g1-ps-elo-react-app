@@ -1,4 +1,83 @@
-.fundo{
+.fundo {
     height: 100vh;
     background: #fff;
+    overflow-x: hidden;
+}
+
+.home-filme-container {
+    height: 280px;
+    width: 500vw;
+    background-image: linear-gradient(135deg, #9833ff 0%, #5500cc 75%);
+    margin-top: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.home-poster-btn {
+    width: 150px;
+    transform: scale(1);
+    transition: transform 0.3s;
+    margin-left: 30px;
+}
+
+.home-poster-btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.home-poster-btn img {
+    width: 100%;
+}
+
+.home-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.home-btn-container button {
+    border: none;
+    border-radius: 10px;
+    background-color: #FF5040;
+    transition: background 0.2s;
+    color: white;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.home-btn-container button:hover {
+    background-color: #E53D2E;
+    cursor: pointer;
+}
+
+.home-search-container {
+    margin-top: 60px;
+    margin-left: 90px;
+    width: 400px;
+}
+
+.home-search-container button {
+    width: 150px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.home-search-container label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 95px;
+    color: #271640;
+    text-shadow: none;
+}
+
+.home-search-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 95px;
+    color: #271640;
+    text-shadow: none;
 }

@@ -61,7 +61,6 @@ function Login() {
             };
             setData(bodyLogin)
             window.localStorage.setItem("token", json.accesstoken);
-            //setRedirect(true);
         } catch(err) {
             console.error("Erro: " + err);
         } finally {
