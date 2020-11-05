@@ -54,13 +54,19 @@ function Cadastro() {
             const {url, options} = USER_CREATE(userInfo);
             const response = await fetch(url, options);
             const json = await response.json();
+            if(json.error) {
+                throw new Error(json.error);
+            }
             const bodyLogin = {
                 username: json.username,
                 email: json.email,
                 urlImg: json.urlImg,
             };
             setData(bodyLogin);
+            alert("USUÁRIO CRIADO COM SUCESSO");
         }catch(err) {
+            alert(err);
+            setRedirect(true);
             console.error("Erro: " + err);
         }
     }

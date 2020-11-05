@@ -49,13 +49,18 @@ function MinhaConta(){
       event.preventDefault();
       const formData = new FormData();
       formData.append("userImage",img);
-      const token = window.localStorage.getItem("token")
-      const{url,options} = USER_UPDATEIMG(formData, token)
-      const response = await fetch(url,options)
-      const json = await response.json()
+      const token = window.localStorage.getItem("token");
+      const{url,options} = USER_UPDATEIMG(formData, token);
+      const response = await fetch(url,options);
+      const json = await response.json();
+      if(json.error) {
+        throw new Error(json.error);
+      }
       setImgData(json.urlImg);
-    }catch(erro){
-      console.error(erro)
+      alert("Foto atualizada com sucesso");
+    }catch(err){
+      alert(err);
+      console.error(err);
     }
   }
 

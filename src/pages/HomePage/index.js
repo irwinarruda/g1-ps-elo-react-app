@@ -53,14 +53,18 @@ function HomePage(){
       const {url, options} = USER_UPDATEDB(userInfo, token);
       const response = await fetch(url, options);
       const json = await response.json();
+      if(json.error) {
+        throw new Error(json.error);
+      }
       const bodyLogin = [
           json.username,
           json.email,
           json.movieDB,
       ];
-      console.log(bodyLogin);
       setData(bodyLogin);
+      alert("Filme Cadastrado com Sucesso");
     } catch(err) {
+        alert(err);
         console.error("Erro: " + err);
     } finally {
       setFilm("");

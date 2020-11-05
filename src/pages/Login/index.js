@@ -47,11 +47,12 @@ function Login() {
                 email: email,
                 password: password
             };
-            console.log(email);
-            console.log(password);
             const {url, options} = USER_LOGIN(userInfo);
             const response = await fetch(url, options);
             const json = await response.json();
+            if(json.error) {
+                throw new Error(json.error);
+            }
             const bodyLogin = {
                 username: json.username,
                 email: json.email,
@@ -61,6 +62,7 @@ function Login() {
             setData(bodyLogin)
             window.localStorage.setItem("token", json.accesstoken);
         } catch(err) {
+            alert(err);
             console.error("Erro: " + err);
         } finally {
             setWait(false);
