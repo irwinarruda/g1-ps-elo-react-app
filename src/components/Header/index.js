@@ -3,7 +3,8 @@ import "./styles.css";
 import "./MenuItems.js";
 import { MenuItems } from "./MenuItems";
 import LogoHeader from '../../assets/logoheader.svg';
-//import {userLogout} from '../../UserApi';
+import { Link } from "react-router-dom";
+import {userLogout} from '../../UserApi';
 //const Header = () => <header id="main-Header">Count and Flix</header>;
 class Header extends Component {
     state ={ clicked: false }
@@ -13,27 +14,19 @@ class Header extends Component {
     render(){
         return(
             <nav className="HeaderItems">
-                <h1 className="header-logo">
+                <Link to="/" className="header-logo">
                     <img src={LogoHeader} alt="LogoCountflix"></img>
-                </h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                  <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-                </div>
+                </Link>
                 <ul className={this.state.clicked ? 'nav-menu-active' : 'nav-menu'}>
-                    {MenuItems.map((item,index)=>{
-                    return(
-                        <li key={index}>
-                            <a className={item.cName} href={item.url} >
-                            {item.title}
-                            </a>
-                        </li>
-                    )
-                    })}
+                    <li>
+                        <a className={MenuItems[0].cName} href={MenuItems[0].url}>{MenuItems[0].title}</a>
+                    </li>
+                    <li onClick={userLogout}>
+                        <a className={MenuItems[1].cName} href={MenuItems[1].url}>{MenuItems[1].title}</a>
+                    </li>
                 </ul>
             </nav>
         )
     }
 }
 export default Header;
-
-
